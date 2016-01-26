@@ -17,9 +17,8 @@ int main()
 	tmp = e.result();
 	t.stop();
 	cout << "The result: " <<  tmp << endl;
-	cout << "Took: ";
 	t.printReport();
-	cout << " to calculate";
+
 	char c;
 	while (c=getchar())
 	{

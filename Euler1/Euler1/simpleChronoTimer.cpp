@@ -21,5 +21,5 @@ void simpleChronoTimer::stop() {
 }
 
 void simpleChronoTimer::printReport() {
-	std::cout<<std::fixed << time_span.count();
+	std::cout<<std::fixed <<"Seconds enlapsed: "<< time_span.count();
 }
