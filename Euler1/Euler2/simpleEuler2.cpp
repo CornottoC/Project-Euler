@@ -12,7 +12,6 @@ simpleEuler2::simpleEuler2(int i) {
 	limit = i;
 }
 
-
 simpleEuler2::~simpleEuler2()
 {
 }
