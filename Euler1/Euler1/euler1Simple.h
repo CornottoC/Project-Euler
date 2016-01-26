@@ -6,7 +6,7 @@ class euler1_simpl
 public:
 	void setFactors(int, int);
 	void setLimit(int);
-	int result();
+	long result();
 	euler1_simpl();
 	euler1_simpl(int, int, int);
 

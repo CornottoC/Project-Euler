@@ -10,8 +10,8 @@ void euler1_simpl::setLimit(int i) {
 	limit = i;
 }
 
-int euler1_simpl::result(){
-	int sum = 0;
+long euler1_simpl::result(){
+	long sum = 0;
 	for (int i = 0; i < limit; i++) {
 		if ((i % 3 == 0) || (i % 5 == 0))sum += i;
 	}
