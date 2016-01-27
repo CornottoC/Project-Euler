@@ -3,3 +3,5 @@ Debug/
 ipch/
 *.suo
 *.ipch
+.vs/
+ipch/
