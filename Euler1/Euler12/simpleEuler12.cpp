@@ -21,13 +21,14 @@ simpleEuler12::~simpleEuler12()
 void simpleEuler12::calculate()
 {
 	int temp = 1;
+	int tempExp = 1;
 	long long triangle=0;
 	for (int i = 0; true; i++ ){
 		triangle += i;
 		std::cout << "Triangle: " << triangle<<"has dividers:";
 		for (int test = 1; test <= std::sqrt(triangle)+1; test++) {
 			if (triangle%test == 0) {
-
+					
 				std::cout << test << " ";
 				temp++;
 			}
