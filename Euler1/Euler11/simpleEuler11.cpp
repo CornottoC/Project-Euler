@@ -8,11 +8,12 @@ simpleEuler11::simpleEuler11()
 {
 }
 
-
 simpleEuler11::~simpleEuler11()
 {
 }
 
+//takes the file from filename and populates the 2D-array "theFeld" 
+//with the values
 void simpleEuler11::readFile(std::string fileName)
 {
 	std::fstream inFileStream(fileName);
@@ -47,6 +48,8 @@ void simpleEuler11::calculateDown()
 	}
 }
 
+//loop structure that tests for all values from [0][0]to[20][16]
+//and multiplys it with the 4 values NEXT to it
 void simpleEuler11::calculateRight()
 {
 	int temp = 1;
@@ -70,6 +73,8 @@ void simpleEuler11::calculateRight()
 	}
 }
 
+//loop structure that tests for all values from [0][0]to[16][16]
+//and multiplys it with the 4 values diagonally down RIGHT of it
 void simpleEuler11::calculateDiagonalRight()
 {
 	int temp = 1;
@@ -93,6 +98,8 @@ void simpleEuler11::calculateDiagonalRight()
 	}
 }
 
+//loop structure that tests for all values from [0][3]to[16][20]
+//and multiplys it with the 4 values diagonally down LEFT of it
 void simpleEuler11::calculateDiagonalLeft()
 {
 	int temp = 1;
