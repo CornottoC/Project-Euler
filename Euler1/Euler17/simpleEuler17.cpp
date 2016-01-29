@@ -44,8 +44,9 @@ void simpleEuler17::populateWordAndLength()
 		words.push_back("Seventy");
 		words.push_back("Eighty");
 		words.push_back("Ninety");
-		words.push_back("Hundered"); //28
+		words.push_back("Hundred"); //28
 		words.push_back("And"); //29
+		words.push_back("Thousand");//30
 	}
 	if (wordsLenght.size() == 0) {
 		for (int i=0; i < words.size(); i++) {
@@ -56,31 +57,25 @@ void simpleEuler17::populateWordAndLength()
 
 }
 
-void simpleEuler17::calculate()
+int simpleEuler17::calculateSum(int max)
 {
-	int sumOfLetters=0;
-	std::string temp;
-	std::string teen;
-	std::string single;
-	for (int i = 1; i <= 1000; i++) {
-		if (i < 20) {
-			sumOfLetters += singles(i);
+	int sum = 0;
+	for (int i = 1; i <= max; i++) {
+		if (i < 100) {
+			sum += underHundred(i);
 		}
-		else if (i < 100) {
-			temp = std::to_string(i);
-			teen = temp[0];
-			single = temp[1];
-			sumOfLetters += teens(std::stoi(teen));
-			sumOfLetters += singles(std::stoi(single));
-
-			
-		}
-		else
+		else if (i < 1000)
 		{
-			temp = std::to_string(i);
-
+			sum += overHundred(i);
 		}
 	}
+	if (max == 1000) {
+		//adding "one"
+		sum += wordsLenght[1];
+		//adding "Thousand"
+		sum += wordsLenght[30];
+	}
+	return sum;
 }
 
 int simpleEuler17::singles(int i)
@@ -132,18 +127,12 @@ int simpleEuler17::teens(int i)
 	return tmp;
 }
 
-int simpleEuler17::hundereds(int i)
-{
-
-}
-
-int simpleEuler17::underHundred(int)
+int simpleEuler17::underHundred(int i)
 {
 	int sumOfLettesToreturn = 0;
 	std::string temp;
 	std::string teen;
 	std::string single;
-	for (int i = 1; i <= 1000; i++) {
 		if (i < 20) {
 			sumOfLettesToreturn += singles(i);
 		}
@@ -156,10 +145,45 @@ int simpleEuler17::underHundred(int)
 
 
 		}
+		return sumOfLettesToreturn;
+	
+}
+
+int simpleEuler17::overHundred(int i)
+{
+	int sumOfLettesToreturn = 0;
+	std::string temp;
+	std::string teen;
+	std::string single;
+	std::string hundred;
+	if (i < 1000) {
+		temp = std::to_string(i);
+		hundred = temp[0];
+		teen = temp.substr(1, 2);
+
+
+		//divisible hundereds
+		if (i % 100 == 0) {
+			sumOfLettesToreturn += singles(std::stoi(hundred));
+			//adding "hundered"
+			sumOfLettesToreturn += wordsLenght[28];
+		}
+		//others
 		else
 		{
-			temp = std::to_string(i);
+			sumOfLettesToreturn += singles(std::stoi(hundred));
+			sumOfLettesToreturn += underHundred(std::stoi(teen));
+			//adding "hundered"
+			sumOfLettesToreturn += wordsLenght[28];
+			//adding "and"
+			sumOfLettesToreturn += wordsLenght[29];
 
 		}
 	}
+	else
+	{
+		std::cout << "Something went wrong, number >= 1000" << std::endl;
+	}
+
+	return sumOfLettesToreturn;
 }
