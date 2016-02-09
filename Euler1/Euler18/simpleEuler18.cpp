@@ -54,7 +54,7 @@ int simpleEuler18::calculateMaxPath(int row, int column, int counter)
 	{
 		counter += triangle[row][column];
 		//std::cout << "MaxPath: " << maxPath << std::endl;
-		if ((counter > maxPath)&&(counter < 100000))maxPath = counter;
+		if ((counter > maxPath)&&(counter < 15000))maxPath = counter;
 		return counter;
 	}
 	

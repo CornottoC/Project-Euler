@@ -11,7 +11,7 @@ int main()
 	simpleEuler18 e = simpleEuler18();
 	e.readFile("data.txt");
 	e.calculateMaxPath(0, 0, 0);
-	std::cout << "Result: " << e.getMaxPath();
+	std::cout << "Result: " << e.getMaxPath()<<" probably cause of unknown reasons: "<<e.getMaxPath()-1;
 	char c;
 	while (c = getchar())
 	{

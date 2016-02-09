@@ -27,6 +27,9 @@
     <ClInclude Include="simpleEuler18.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="smartEuler18.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -36,6 +39,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="simpleEuler18.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="smartEuler18.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
