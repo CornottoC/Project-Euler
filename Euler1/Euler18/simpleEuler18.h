@@ -9,8 +9,9 @@ public:
 	int calculateMaxPath(int, int, int);
 	int getMaxPath();
 private:
-	int triangle[15][15];
+	const static int depth = 100;
+	int triangle[depth][depth];
 	int maxPath = 0;
-	int depth = 15;
+
 };
 
